@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Listname:</strong>
+  <%= @list.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @list.description %>
+</p>
+
+<p>
+  <strong>Pods:</strong>
+
+<pre><code>platform :ios, '7.0'
+  <% @list.pods.each do |pod|%>
+    pod '<%= pod %>'
+  <% end %>
+ </code></pre>
+ 
+</p>
+
+<%= link_to 'Edit', edit_list_path(@list) %> |
+<%= link_to 'Back', lists_path %>
+
+<script>
+  $(document).ready(function() {
+    $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
+  });
+</script>

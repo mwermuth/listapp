@@ -1,0 +1,40 @@
+<%= form_for(@list) do |f| %>
+  <% if @list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
+
+      <ul>
+      <% @list.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field" id="pods_field">
+    <% cnt = 0 %>
+    <% @list.pods.each_with_index do |s,i| %>
+      <p>
+        Pod <%=i+1%>: <%=text_field "pod", i, :name => "list[pods][]",  :value => s %>
+      </p>
+      <% cnt = i %>
+      <%end%>
+  </div>
+  <a href="javascript:none" onclick="add_fields('pods',<%= cnt+1 %>)">Add Pod</a>
+  
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
