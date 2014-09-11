@@ -7,6 +7,9 @@ Devise.setup do |config|
   # config.secret_key = '855d5751e4f464a4bf6f6bf08c21293338bc731a46ee34f7b3f3e3f28d73a4d030b372b37548f0c3559bb4adbf6b30fe5e86bb84a1e44a1e0c50b6128470ecef'
   config.secret_key = '063e022d456ad3e66fdf2177364d12e40ed0b2a0b010755b1550bb924fac129fbb6c84731b31a3bc0b71a35242c1dd216bc7697ce01a9f08337d30bbe7e5b78c'
 
+  config.omniauth :github, "b91f33223efcc65fa815", "28742839bb3b4d7b3eef90bf359aa15fa22ce801"
+
+
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class

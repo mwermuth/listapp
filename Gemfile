@@ -20,6 +20,7 @@ gem 'highlight', :require => 'simplabs/highlight'
 # gem 'therubyracer',  platforms: :ruby
 
 gem 'devise'
+gem 'omniauth-github'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -44,4 +45,8 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+# 
+# 
+gem "better_errors", group: [:development]
+gem "binding_of_caller", group: [:development]
 
